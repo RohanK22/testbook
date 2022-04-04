@@ -38,7 +38,7 @@ jobs:
       run: |
         sudo apt-get install texlive-latex-recommended texlive-latex-extra texlive-fonts-recommended texlive-fonts-extra texlive-xetex latexmk
         jupyter-book build ./ --builder pdflatex
-        mv ./_build/pdf/book.pdf ./_build/html/book-via-latex.pdf
+        mv ./_build/latex/book.pdf ./_build/html/book-via-latex.pdf
         
     # Push the book's HTML to github-pages
     - name: GitHub Pages action
