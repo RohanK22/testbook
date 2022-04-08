@@ -10,3 +10,4 @@ chapters:
 - file: markdown
 - file: notebooks
 - file: markdown-notebooks
+#  - file: test-timeseries - this builds manually :TODO: test whether it builds using Github actions
