@@ -8,6 +8,6 @@ chapters:
 - file: test-panels
 - file: test-sidebars
 - file: markdown
-- file: notebooks
+# - file: notebooks
 - file: markdown-notebooks
-#  - file: test-timeseries - this builds manually :TODO: test whether it builds using Github actions
+- file: test-timeseries #- this builds manually :TODO: test whether it builds using Github actions

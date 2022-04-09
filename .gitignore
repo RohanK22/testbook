@@ -130,3 +130,6 @@ dmypy.json
 
 # visual studio code stuff
 .vscode
+
+# local builds
+_build
