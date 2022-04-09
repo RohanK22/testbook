@@ -4,3 +4,4 @@ numpy
 pyppeteer
 ipython
 plotly
+pandas
