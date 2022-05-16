@@ -15,14 +15,14 @@ jobs:
     env:
       TYPE: ${{ secrets.TYPE }}
       PID: ${{ secrets.PID }}
-      PKID: ${{ secrests.PKID }}
-      PK: ${{ secrests.PK }}
-      CE: ${{ secrests.CE }}
-      CID: ${{ secrests.CID }}
-      AURI: ${{ secrests.AURI }}
-      TURI: ${{ secrests.TURI }}
-      AUTHP: ${{ secrests.AUTHP }}
-      CLIURL: ${{ secrests.CLIURL }}
+      PKID: ${{ secrets.PKID }}
+      PK: ${{ secrets.PK }}
+      CE: ${{ secrets.CE }}
+      CID: ${{ secrets.CID }}
+      AURI: ${{ secrets.AURI }}
+      TURI: ${{ secrets.TURI }}
+      AUTHP: ${{ secrets.AUTHP }}
+      CLIURL: ${{ secrets.CLIURL }}
     steps:
     - uses: actions/checkout@v2
 
