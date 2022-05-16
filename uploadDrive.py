@@ -12,7 +12,21 @@ scopes = ['https://www.googleapis.com/auth/drive.file', 'https://www.googleapis.
     'https://www.googleapis.com/auth/drive.file',
     'https://www.googleapis.com/auth/drive.metadata'
 ]
-credentials = ServiceAccountCredentials.from_json_keyfile_name('service.json', scopes)
+tokensDict = {
+  "type": os.getenv('TYPE'),
+  "project_id": os.getenv('PID'),
+  "private_key_id": os.getenv('PKID'),
+  "private_key": os.getenv('PK').replace('\\n', '\n'),
+  "client_email": os.getenv('CE'),
+  "client_id": os.getenv('CID'),
+  "auth_uri": os.getenv('AURI'),
+  "token_uri": os.getenv('TURI'),
+  "auth_provider_x509_cert_url": os.getenv('AUTHP'),
+  "client_x509_cert_url": os.getenv('CLIURL')
+}
+
+
+credentials = ServiceAccountCredentials.from_json_keyfile_dict(tokensDict, scopes)
 
 http_auth = credentials.authorize(Http())
 drive = build('drive', 'v3', http=http_auth)

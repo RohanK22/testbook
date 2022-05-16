@@ -25,16 +25,20 @@ jobs:
       run: |
         pip install -r requirements.txt
 
-    - name: Create file
-      run: 'echo "$KEY" > service.json'
-      shell: bash
+    - name: Load ENVs
       env:
-        KEY: ${{secrets.GOOGLE_SERVICE}}
+        TYPE: ${{ secrets.TYPE }}
+        PID: ${{ secrets.PID }}
+        PKID: ${{ secrests.PKID }}
+        PK: ${{ secrests.PK }}
+        CE: ${{ secrests.CE }}
+        CID: ${{ secrests.CID }}
+        AURI: ${{ secrests.AURI }}
+        TURI: ${{ secrests.TURI }}
+        AUTHP: ${{ secrests.AUTHP }}
+        CLIURL: ${{ secrests.CLIURL }}
 
-    - name: Log cred
-      run: |
-        echo $KEY
-        cat service.json
+
 
     # Download 'data' folder from Google Drive
     - name: Download from Google Drive
