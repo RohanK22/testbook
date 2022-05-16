@@ -12,6 +12,17 @@ on:
 jobs:
   deploy-book:
     runs-on: ubuntu-latest
+    env:
+      TYPE: ${{ secrets.TYPE }}
+      PID: ${{ secrets.PID }}
+      PKID: ${{ secrests.PKID }}
+      PK: ${{ secrests.PK }}
+      CE: ${{ secrests.CE }}
+      CID: ${{ secrests.CID }}
+      AURI: ${{ secrests.AURI }}
+      TURI: ${{ secrests.TURI }}
+      AUTHP: ${{ secrests.AUTHP }}
+      CLIURL: ${{ secrests.CLIURL }}
     steps:
     - uses: actions/checkout@v2
 
@@ -24,21 +35,6 @@ jobs:
     - name: Install dependencies
       run: |
         pip install -r requirements.txt
-
-    - name: Load ENVs
-      env:
-        TYPE: ${{ secrets.TYPE }}
-        PID: ${{ secrets.PID }}
-        PKID: ${{ secrests.PKID }}
-        PK: ${{ secrests.PK }}
-        CE: ${{ secrests.CE }}
-        CID: ${{ secrests.CID }}
-        AURI: ${{ secrests.AURI }}
-        TURI: ${{ secrests.TURI }}
-        AUTHP: ${{ secrests.AUTHP }}
-        CLIURL: ${{ secrests.CLIURL }}
-
-
 
     # Download 'data' folder from Google Drive
     - name: Download from Google Drive
