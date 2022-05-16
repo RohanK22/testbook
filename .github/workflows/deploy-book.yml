@@ -29,7 +29,7 @@ jobs:
       run: 'echo "$KEY" > service.json'
       shell: bash
       env:
-        KEY: ${{secrets.SERVICE_ACC_SECRET}}
+        KEY: ${{secrets.google_service}}
 
     # Download 'data' folder from Google Drive
     - name: Download from Google Drive
