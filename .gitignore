@@ -133,3 +133,7 @@ dmypy.json
 
 # local builds
 _build
+
+#Keys
+credentials.json
+service.json

@@ -1,10 +1,12 @@
 name: deploy-book
 
-# Only run this when the gh-pages branch changes
 on:
   push:
     branches:
     - main
+  schedule:
+    - cron: '* * * * *'
+#'*/2 * * * *'
     
 # This job installs dependencies, builds the book, and pushes it to `gh-pages`
 jobs:
@@ -22,6 +24,24 @@ jobs:
     - name: Install dependencies
       run: |
         pip install -r requirements.txt
+
+    # Download 'data' folder from Google Drive
+    - name: Download from Google Drive
+      run: |
+        python3 downloadDrive.py
+# mkdir -p data
+# mv -f input data/input
+# mv -f output data/output
+# mv -f processed data/processed
+
+    # Process the data for duplicates etc
+      run: |
+        python3 process_data.py data
+
+    # Upload processed files
+      run: |
+        python3 uploadDrive.py data
+
     # Build the book
     - name: Build the book
       run: |
