@@ -25,6 +25,12 @@ jobs:
       run: |
         pip install -r requirements.txt
 
+    - name: Create file
+      run: 'echo "$KEY" > key'
+      shell: bash
+      env:
+        KEY: ${{secrets.SERVICE_ACC_SECRET}}
+
     # Download 'data' folder from Google Drive
     - name: Download from Google Drive
       run: |
