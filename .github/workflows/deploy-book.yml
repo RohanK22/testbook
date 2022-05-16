@@ -35,9 +35,11 @@ jobs:
 # mv -f processed data/processed
 
     # Process the data for duplicates etc
+    - name: Process Data
       run: |
         python3 process_data.py data
 
+    - name: Upload Processed Files
     # Upload processed files
       run: |
         python3 uploadDrive.py data
